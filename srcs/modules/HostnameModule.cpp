@@ -13,7 +13,18 @@
 #include <unistd.h>
 #include "HostnameModule.hpp"
 
-HostnameModule::HostnameModule() {}
+HostnameModule::HostnameModule() {
+	char		buffer[255];
+	std::string	hostname;
+	buffer[0] = '\0';
+
+	if (gethostname(buffer, sizeof(buffer) - 1) != 0) {
+		this->_data.push_back("Error");
+	} else {
+		hostname = buffer;
+		this->_data.push_back(hostname);
+	}
+}
 
 HostnameModule::HostnameModule(std::string & name) : Module(name) {}
 
