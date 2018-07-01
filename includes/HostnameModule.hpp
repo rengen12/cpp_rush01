@@ -11,18 +11,19 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_HOSTNAMEMODULE_HPP
-#define CPPRUSH1_HOSTNAMEMODULE_HPP
+# define CPPRUSH1_HOSTNAMEMODULE_HPP
 
-#include "Module.hpp"
+# include "Module.hpp"
+# include <unistd.h>
 
 class HostnameModule : public Module
 {
 public:
 	HostnameModule(void);
-	HostnameModule(std::string & name);
+	HostnameModule(std::string name);
 	HostnameModule(HostnameModule const & obj);
 	virtual ~HostnameModule();
-	virtual void updateData();
+	void updateData();
 
 };
 

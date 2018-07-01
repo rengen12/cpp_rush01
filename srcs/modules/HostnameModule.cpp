@@ -10,23 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "HostnameModule.hpp"
 
-HostnameModule::HostnameModule() {
-	char		buffer[255];
+HostnameModule::HostnameModule() : Module() {
+	char		buffer[255] = {0};
 	std::string	hostname;
-	buffer[0] = '\0';
 
-	if (gethostname(buffer, sizeof(buffer) - 1) != 0) {
+	buffer[0] = '\0';
+	if (gethostname(buffer, sizeof(buffer) - 1) != 0)
 		this->_data.push_back("Error");
-	} else {
+	else
 		hostname = buffer;
-		this->_data.push_back(hostname);
-	}
+		this->_data.push_back(buffer);
 }
 
-HostnameModule::HostnameModule(std::string & name) : Module(name) {}
+HostnameModule::HostnameModule(std::string name) : Module(name) {
+	char		buffer[255] = {0};
+
+	if (gethostname(buffer, sizeof(buffer) - 1) != 0)
+		this->_data.push_back("Error");
+	else
+		this->_data.push_back(buffer);
+}
 
 HostnameModule::~HostnameModule() {}
 
@@ -35,14 +40,12 @@ HostnameModule::HostnameModule(HostnameModule const & obj) : Module() {
 }
 
 void HostnameModule::updateData(void) {
-	char		buffer[255];
-	std::string	hostname;
-	buffer[0] = '\0';
+	char		buffer[255] = {0};
 
-	if (gethostname(buffer, sizeof(buffer) - 1) != 0) {
+	for (; this->_data.size();)
+		this->_data.erase(this->_data.begin());
+	if (gethostname(buffer, sizeof(buffer) - 1) != 0)
 		this->_data.push_back("Error");
-	} else {
-		hostname = buffer;
-		this->_data.push_back(hostname);
-	}
+	else
+		this->_data.push_back(buffer);
 }

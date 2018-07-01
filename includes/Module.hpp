@@ -13,9 +13,10 @@
 #ifndef CPPRUSH1_MODULE_HPP
 #define CPPRUSH1_MODULE_HPP
 
-#include <iostream>
-#include <vector>
-#include "IMonitorModule.hpp"
+# include <iostream>
+# include <vector>
+# include <unistd.h>
+# include "IMonitorModule.hpp"
 
 class Module : public IMonitorModule
 {
@@ -38,6 +39,8 @@ public:
 	void setData(const std::vector<std::string> &_data);
 
 	virtual void updateData() = 0;
+
+	std::string	getDataTop(const char *command);
 };
 
 

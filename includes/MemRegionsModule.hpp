@@ -1,13 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ram.cpp                                            :+:      :+:    :+:   */
+/*   MemRegionsModule.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/30 21:25:00 by amichak           #+#    #+#             */
-/*   Updated: 2018/06/30 21:25:00 by amichak          ###   ########.fr       */
+/*   Created: 2018/07/01 17:46:00 by amichak           #+#    #+#             */
+/*   Updated: 2018/07/01 17:46:00 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ram.hpp"
+#ifndef CPPRUSH1_MEMREGIONSMODULE_HPP
+#define CPPRUSH1_MEMREGIONSMODULE_HPP
+
+#include "Module.hpp"
+
+class MemRegionsModule : public Module
+{
+public:
+	MemRegionsModule(void);
+	MemRegionsModule(std::string name);
+	virtual ~MemRegionsModule(void);
+	void updateData();
+};
+
+
+#endif

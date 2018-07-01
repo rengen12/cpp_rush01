@@ -1,24 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Network.hpp                                        :+:      :+:    :+:   */
+/*   CatModule.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/30 21:25:00 by amichak           #+#    #+#             */
-/*   Updated: 2018/06/30 21:25:00 by amichak          ###   ########.fr       */
+/*   Created: 2018/07/01 13:15:00 by amichak           #+#    #+#             */
+/*   Updated: 2018/07/01 13:15:00 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPPRUSH1_NETWORK_HPP
-#define CPPRUSH1_NETWORK_HPP
-
-#include "Module.hpp"
-
-class Network : public Module
-{
-
-};
-
-
-#endif
+#include "CatModule.hpp"

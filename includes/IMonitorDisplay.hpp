@@ -13,10 +13,14 @@
 #ifndef IMONITORDISPLAY_H
 # define IMONITORDISPLAY_H
 
-class IMonitorModule
+# include <iostream>
+# include <vector>
+# include "Module.hpp"
+
+class IMonitorDisplay
 {
 public:
-	virtual void	updateDisplay(void) = 0;
+	virtual void	updateDisplay(std::vector<Module *>) = 0;
 };
 
 #endif
