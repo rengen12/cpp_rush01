@@ -19,11 +19,26 @@ Display::~Display() {
 		this->_windows.erase(this->_windows.begin());
 }
 
-void	Display::updateDisplay(std::vector<Module *> modules) {
-	if (modules.size() < 1) {
+void	Display::updateDisplay(std::vector<Module *> modules, char choice) {
+	if (modules.empty())
 		return;
-	}
 
+	if (choice == 'n')
+		this->n(modules);
+	else if (choice == 's')
+		this->s(modules);
+}
+
+void	Display::n(std::vector<Module *> modules) {
+	initscr();
+	noecho();
+	keypad(stdscr, TRUE);
+	nodelay(stdscr, TRUE);
+	curs_set(0);
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &this->w);
+}
+
+void	Display::s(std::vector<Module *> modules) {
 	sf::Image image;
 	image.loadFromFile("siniy.jpg");
 	sf::Texture image2;
@@ -40,10 +55,9 @@ void	Display::updateDisplay(std::vector<Module *> modules) {
 
 	for (unsigned long module = 0; module < modules.size(); module++) {
 		sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(500, 250),
-								modules[module]->getName());
+														modules[module]->getName());
 		sf::Vector2u size = window->getSize();
 		window->setPosition(sf::Vector2i(size.x, size.y + module * 270));
-
 		window->setVerticalSyncEnabled(true);
 		this->_windows.push_back(window);
 	}

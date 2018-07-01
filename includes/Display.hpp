@@ -16,6 +16,7 @@
 #include "IMonitorDisplay.hpp"
 #include "Module.hpp"
 # include <SFML/Graphics.hpp>
+#include <ncurses.h>
 
 class Display : public IMonitorDisplay
 {
@@ -25,7 +26,9 @@ private:
 public:
 	Display();
 	virtual ~Display();
-	void	updateDisplay(std::vector<Module *>modules);
+	void	updateDisplay(std::vector<Module *>modules, char choice);
+	void	n(std::vector<Module *> modules);
+	void	s(std::vector<Module *> modules);
 
 };
 
