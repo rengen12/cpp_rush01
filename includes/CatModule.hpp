@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_CATMODULE_HPP
-#define CPPRUSH1_CATMODULE_HPP
+# define CPPRUSH1_CATMODULE_HPP
 
-#include "Module.hpp"
+# include "Module.hpp"
 
 class CatModule : public Module
 {

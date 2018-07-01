@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_DATETIMEMODULE_HPP
-#define CPPRUSH1_DATETIMEMODULE_HPP
+# define CPPRUSH1_DATETIMEMODULE_HPP
 
-#include "Module.hpp"
+# include "Module.hpp"
 
 class DateTimeModule : public Module
 {

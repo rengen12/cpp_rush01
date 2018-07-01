@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_MODULE_HPP
-#define CPPRUSH1_MODULE_HPP
+# define CPPRUSH1_MODULE_HPP
 
 # include <iostream>
 # include <vector>

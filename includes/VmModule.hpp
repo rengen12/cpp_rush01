@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_VMMODULE_HPP
-#define CPPRUSH1_VMMODULE_HPP
+# define CPPRUSH1_VMMODULE_HPP
 
 # include "Module.hpp"
 # include <sstream>

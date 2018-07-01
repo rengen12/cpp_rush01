@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_NETWORKMODULE_HPP
-#define CPPRUSH1_NETWORKMODULE_HPP
+# define CPPRUSH1_NETWORKMODULE_HPP
 
 # include "Module.hpp"
 # include <sys/sysctl.h>

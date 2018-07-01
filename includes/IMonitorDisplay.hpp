@@ -20,7 +20,7 @@
 class IMonitorDisplay
 {
 public:
-	virtual void	updateDisplay(std::vector<Module *>) = 0;
+	virtual void	updateDisplay(std::vector<Module *>, char choice) = 0;
 };
 
 #endif

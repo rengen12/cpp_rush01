@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_CPUMODULE_HPP
-#define CPPRUSH1_CPUMODULE_HPP
+# define CPPRUSH1_CPUMODULE_HPP
 
-#include "Module.hpp"
+# include "Module.hpp"
 # include <sys/sysctl.h>
 # include <unistd.h>
 

@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_DISPLAY_HPP
-#define CPPRUSH1_DISPLAY_HPP
+# define CPPRUSH1_DISPLAY_HPP
 
-#include "IMonitorDisplay.hpp"
-#include "Module.hpp"
+# include "IMonitorDisplay.hpp"
+# include "Module.hpp"
 # include <SFML/Graphics.hpp>
-#include <ncurses.h>
+# include <ncurses.h>
+# include <sys/ioctl.h>
 
 class Display : public IMonitorDisplay
 {

@@ -30,12 +30,15 @@ void	Display::updateDisplay(std::vector<Module *> modules, char choice) {
 }
 
 void	Display::n(std::vector<Module *> modules) {
+	int w;
+
 	initscr();
 	noecho();
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, TRUE);
 	curs_set(0);
-	ioctl(STDOUT_FILENO, TIOCGWINSZ, &this->w);
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+	static_cast<void>(modules);
 }
 
 void	Display::s(std::vector<Module *> modules) {

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_RAMMODULE_HPP
-#define CPPRUSH1_RAMMODULE_HPP
+# define CPPRUSH1_RAMMODULE_HPP
 
 # include "Module.hpp"
 # include <sys/sysctl.h>

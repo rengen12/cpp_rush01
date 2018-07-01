@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_MEMREGIONSMODULE_HPP
-#define CPPRUSH1_MEMREGIONSMODULE_HPP
+# define CPPRUSH1_MEMREGIONSMODULE_HPP
 
-#include "Module.hpp"
+# include "Module.hpp"
 
 class MemRegionsModule : public Module
 {

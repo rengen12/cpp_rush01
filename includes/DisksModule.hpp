@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CPPRUSH1_DISKSMODULE_HPP
-#define CPPRUSH1_DISKSMODULE_HPP
+# define CPPRUSH1_DISKSMODULE_HPP
 
 # include "Module.hpp"
 # include <sstream>
