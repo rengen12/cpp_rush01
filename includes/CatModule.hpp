@@ -17,7 +17,13 @@
 
 class CatModule : public Module
 {
-
+public:
+	CatModule();
+	CatModule(std::string name);
+	virtual ~CatModule();
+	void updateData();
+	CatModule(CatModule const &src);
+	CatModule	&operator=(CatModule const &rhs);
 };
 
 

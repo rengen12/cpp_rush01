@@ -35,10 +35,6 @@ HostnameModule::HostnameModule(std::string name) : Module(name) {
 
 HostnameModule::~HostnameModule() {}
 
-HostnameModule::HostnameModule(HostnameModule const & obj) : Module() {
-	*this = obj;
-}
-
 void HostnameModule::updateData(void) {
 	char		buffer[255] = {0};
 
@@ -48,4 +44,13 @@ void HostnameModule::updateData(void) {
 		this->_data.push_back("Error");
 	else
 		this->_data.push_back(buffer);
+}
+
+HostnameModule::HostnameModule(HostnameModule const &src) {
+	*this = src;
+}
+
+HostnameModule	&HostnameModule::operator=(HostnameModule const &rhs) {
+	(void)rhs;
+	return (*this);
 }

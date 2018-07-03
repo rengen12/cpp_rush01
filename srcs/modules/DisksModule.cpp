@@ -98,3 +98,12 @@ void DisksModule::updateData() {
 	std::sprintf(buf, "%d", written);
 	this->_data.push_back("Used: " + std::string(buf) + "M");
 }
+
+DisksModule::DisksModule(DisksModule const &src) {
+	*this = src;
+}
+
+DisksModule	&DisksModule::operator=(DisksModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

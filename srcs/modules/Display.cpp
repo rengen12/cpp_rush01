@@ -17,6 +17,9 @@ Display::Display() {}
 Display::~Display() {
 	for (; this->_windows.size();)
 		this->_windows.erase(this->_windows.begin());
+	clear();
+	refresh();
+	endwin();
 }
 
 void	Display::updateDisplay(std::vector<Module *> modules, char choice) {
@@ -30,15 +33,38 @@ void	Display::updateDisplay(std::vector<Module *> modules, char choice) {
 }
 
 void	Display::n(std::vector<Module *> modules) {
-	int w;
+	std::vector<std::string>	data;
+	int							key;
 
 	initscr();
 	noecho();
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, TRUE);
 	curs_set(0);
-	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-	static_cast<void>(modules);
+
+	while (1) {
+		key = getch();
+		if (key == 'q' || key == 'Q')
+			break;
+		clear();
+		printw("%s", "FT_GKRELLM");
+		printw("%c", '\n');
+		printw("%c", '\n');
+		for (unsigned long module = 0; module < modules.size(); module++)
+			modules[module]->updateData();
+
+		for (unsigned long module = 0; module < modules.size(); module++) {
+			printw("%s", modules[module]->getName().c_str());
+			printw("%c", '\n');
+			data = modules[module]->getData();
+			for (unsigned long i = 0; i < data.size(); i++) {
+				printw("%s", data[i].c_str());
+				printw("%c", '\n');
+			}
+			printw("%c", '\n');
+		}
+		refresh();
+	}
 }
 
 void	Display::s(std::vector<Module *> modules) {
@@ -90,3 +116,11 @@ void	Display::s(std::vector<Module *> modules) {
 	}
 }
 
+Display::Display(Display const &src) {
+	*this = src;
+}
+
+Display	&Display::operator=(Display const &rhs) {
+	(void)rhs;
+	return (*this);
+}

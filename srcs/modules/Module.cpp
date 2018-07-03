@@ -55,3 +55,12 @@ std::string	Module::getDataTop(const char *command) {
 	}
 	return ("");
 }
+
+Module::Module(Module const &src) {
+	*this = src;
+}
+
+Module	&Module::operator=(Module const &rhs) {
+	(void)rhs;
+	return (*this);
+}

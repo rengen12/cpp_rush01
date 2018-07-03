@@ -101,3 +101,12 @@ void RamModule::updateData() {
 	std::sprintf(buf, "%d", unused);
 	this->_data.push_back("Unused: " + std::string(buf) + "M");
 }
+
+RamModule::RamModule(RamModule const &src) {
+	*this = src;
+}
+
+RamModule	&RamModule::operator=(RamModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

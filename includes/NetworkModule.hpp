@@ -23,6 +23,8 @@ public:
 	NetworkModule(std::string name);
 	virtual ~NetworkModule(void);
 	void updateData();
+	NetworkModule(NetworkModule const &src);
+	NetworkModule	&operator=(NetworkModule const &rhs);
 };
 
 

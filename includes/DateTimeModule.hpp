@@ -22,6 +22,8 @@ public:
 	DateTimeModule(std::string name);
 	virtual ~DateTimeModule(void);
 	void updateData();
+	DateTimeModule(DateTimeModule const &src);
+	DateTimeModule	&operator=(DateTimeModule const &rhs);
 };
 
 

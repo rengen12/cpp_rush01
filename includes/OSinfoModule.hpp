@@ -23,6 +23,8 @@ public:
 	OSinfoModule(std::string name);
 	virtual ~OSinfoModule();
 	void updateData();
+	OSinfoModule(OSinfoModule const &src);
+	OSinfoModule	&operator=(OSinfoModule const &rhs);
 };
 
 

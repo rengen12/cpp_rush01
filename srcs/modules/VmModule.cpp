@@ -67,3 +67,12 @@ void VmModule::updateData() {
 		string.erase(0, string.find(',') + 1);
 	}
 }
+
+VmModule::VmModule(VmModule const &src) {
+	*this = src;
+}
+
+VmModule	&VmModule::operator=(VmModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

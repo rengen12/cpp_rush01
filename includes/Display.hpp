@@ -17,7 +17,6 @@
 # include "Module.hpp"
 # include <SFML/Graphics.hpp>
 # include <ncurses.h>
-# include <sys/ioctl.h>
 
 class Display : public IMonitorDisplay
 {
@@ -30,6 +29,8 @@ public:
 	void	updateDisplay(std::vector<Module *>modules, char choice);
 	void	n(std::vector<Module *> modules);
 	void	s(std::vector<Module *> modules);
+	Display(Display const &src);
+	Display	&operator=(Display const &rhs);
 
 };
 

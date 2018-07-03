@@ -62,3 +62,12 @@ void MemRegionsModule::updateData() {
 		string.erase(0, string.find(',') + 1);
 	}
 }
+
+MemRegionsModule::MemRegionsModule(MemRegionsModule const &src) {
+	*this = src;
+}
+
+MemRegionsModule	&MemRegionsModule::operator=(MemRegionsModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

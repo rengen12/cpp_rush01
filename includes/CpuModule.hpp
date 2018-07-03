@@ -24,6 +24,8 @@ public:
 	CpuModule(std::string name);
 	virtual ~CpuModule(void);
 	void updateData();
+	CpuModule(CpuModule const &src);
+	CpuModule	&operator=(CpuModule const &rhs);
 };
 
 

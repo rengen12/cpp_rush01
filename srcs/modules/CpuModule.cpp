@@ -85,3 +85,12 @@ void CpuModule::updateData() {
 		string.erase(0, string.find(',') + 1);
 	}
 }
+
+CpuModule::CpuModule(CpuModule const &src) {
+	*this = src;
+}
+
+CpuModule	&CpuModule::operator=(CpuModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

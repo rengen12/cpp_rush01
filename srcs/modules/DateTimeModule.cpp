@@ -51,3 +51,12 @@ void DateTimeModule::updateData() {
 	std::strftime(buffer, sizeof(buffer) - 1, "%r", localtime(&t));
 	this->_data.push_back(buffer);
 }
+
+DateTimeModule::DateTimeModule(DateTimeModule const &src) {
+	*this = src;
+}
+
+DateTimeModule	&DateTimeModule::operator=(DateTimeModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

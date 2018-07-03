@@ -66,3 +66,14 @@ void NetworkModule::updateData() {
 		string.erase(0, string.find(',') + 1);
 	}
 }
+
+
+
+NetworkModule::NetworkModule(NetworkModule const &src) {
+	*this = src;
+}
+
+NetworkModule	&NetworkModule::operator=(NetworkModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

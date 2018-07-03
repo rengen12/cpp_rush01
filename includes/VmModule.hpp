@@ -23,6 +23,8 @@ public:
 	VmModule(std::string name);
 	virtual ~VmModule(void);
 	void updateData();
+	VmModule(VmModule const &src);
+	VmModule	&operator=(VmModule const &rhs);
 };
 
 #endif

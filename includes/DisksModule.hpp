@@ -23,6 +23,8 @@ public:
 	DisksModule(std::string name);
 	virtual ~DisksModule(void);
 	void updateData();
+	DisksModule(DisksModule const &src);
+	DisksModule	&operator=(DisksModule const &rhs);
 };
 
 

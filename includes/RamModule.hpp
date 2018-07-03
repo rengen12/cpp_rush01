@@ -24,6 +24,8 @@ public:
 	RamModule(std::string name);
 	virtual ~RamModule(void);
 	void updateData();
+	RamModule(RamModule const &src);
+	RamModule	&operator=(RamModule const &rhs);
 };
 
 

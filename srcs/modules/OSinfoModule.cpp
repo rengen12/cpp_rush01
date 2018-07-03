@@ -63,3 +63,14 @@ void OSinfoModule::updateData() {
 	else
 		this->_data.push_back(buffer);
 }
+
+
+
+OSinfoModule::OSinfoModule(OSinfoModule const &src) {
+	*this = src;
+}
+
+OSinfoModule	&OSinfoModule::operator=(OSinfoModule const &rhs) {
+	(void)rhs;
+	return (*this);
+}

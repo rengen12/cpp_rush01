@@ -21,9 +21,10 @@ class HostnameModule : public Module
 public:
 	HostnameModule(void);
 	HostnameModule(std::string name);
-	HostnameModule(HostnameModule const & obj);
 	virtual ~HostnameModule();
 	void updateData();
+	HostnameModule(HostnameModule const &src);
+	HostnameModule	&operator=(HostnameModule const &rhs);
 
 };
 
